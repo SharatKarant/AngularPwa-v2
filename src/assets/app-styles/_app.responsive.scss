@@ -1,0 +1,25 @@
+@media screen and (max-width: 350px) {
+    .col-6.info-group{
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 575px) {
+    .sidebar{
+        width: 0 !important;
+        z-index: 99;
+        &.expend{
+            width: fit-content !important;
+        }
+    }
+    .main{
+        width: auto !important;
+        margin-left: 0px !important;
+        max-width: 98%;
+        margin: auto;
+    }
+}
+@media screen and (min-width:576px) and (max-width:676px) {
+    .container, .container-sm {
+        max-width: 100%;
+    }
+}

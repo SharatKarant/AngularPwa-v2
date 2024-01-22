@@ -1,0 +1,34 @@
+.profile{
+    img{
+        width: 75px;;
+        height: 75px;
+        border-radius: 50%;
+        margin: auto;
+    }
+}
+.list-group-item{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border: none;
+    &.active{
+        background-color: #b4d7d9;
+    border-radius: 0px;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            background-color: #29aa2e;
+            left: 0px;
+            bottom: 0;
+        }
+    }
+    &:hover{
+        background-color: #b4d7d9;
+    }
+    
+}
+.mat-icon{
+    margin-right: 10px !important;
+}

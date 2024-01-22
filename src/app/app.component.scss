@@ -1,0 +1,14 @@
+@import "../assets/app-styles/variable";
+.sidebar{
+    width: 250px;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: $bg-light;
+    position: fixed;
+}
+.main{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    background-color: #ececec;
+    min-height: 100vh;
+}

@@ -1,0 +1,183 @@
+<div mat-dialog-content class="p-0">
+    <div class="row m-0 justify-content-center ">
+        <div class="col-12 p-0">
+            <form [formGroup]="assessmentForm" (ngSubmit)="saveAssessment()" novalidate>
+                <div class="card rounded-0">
+                    <div class="card-header rounded-0 bg-app-primary text-white">
+                      Add New Assessments
+                    </div>
+                    <div class="card-body">
+                        <div class="row m-0 border">
+                            <ng-container >
+                                <div class="col-4">
+                                    <div class="form-group mb-2">
+                                        <label class="col-form-label">Name</label>
+                                        <div class="w-100">
+                                            <input type="text" formControlName="name" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="form-group mb-2">
+                                        <label class="col-form-label">Description</label>
+                                        <div class="w-100">
+                                            <input type="text" formControlName="description" class="form-control">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group mb-2">
+                                        <label class="col-form-label">Star Date</label>
+                                        <div class="w-100">
+                                            <input type="date" formControlName="starDate" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group mb-2">
+                                        <label class="col-form-label">End Date</label>
+                                        <div class="w-100">
+                                            <input type="date" formControlName="endDate" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group mb-2">
+                                        <label class="col-form-label">Class</label>
+                                        <div class="w-100">
+                                            <select formControlName="assignedClassId" class="form-control appearance-revert" >
+                                                <option [ngValue]="0">Selet Class</option>
+                                                <option *ngFor="let classdata of classList" [ngValue]="classdata.id">{{classdata.name}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-container formGroupName="questionMasterList">
+                                <div class="col-4" >
+                                    <div class="form-group mb-2">
+                                        <label class="col-form-label">Number Of Question</label>
+                                        <div class="w-100">
+                                            <input type="text" formControlName="numberOfQuestion" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <ng-container formArrayName="questionsList">
+                                    <div class="col-12 mb-3"  *ngFor="let questionData of assessmentForm.get('questionMasterList').get('questionsList')['controls']; let qListindex = index">
+                                    <div class="row m-0 questionListGroup" [formGroupName]="qListindex">
+                                        <div class="col-4" >
+                                            <div class="form-group mb-2">
+                                                <label class="col-form-label">Question</label>
+                                                <div class="w-100">
+                                                    <input type="text" formControlName="question" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="form-group mb-2">
+                                                <label class="col-form-label">Description</label>
+                                                <div class="w-100">
+                                                    <input type="text" formControlName="description" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group mb-2">
+                                                <label class="col-form-label">Point</label>
+                                                <div class="w-100">
+                                                    <input type="text" formControlName="point" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-group mb-2">
+                                                <label class="col-form-label">Question Type</label>
+                                                <div class="w-100">
+                                                    <select formControlName="type" class="form-control appearance-revert" (change)="changetypeCode($event, qListindex)">
+                                                        <option [ngValue]="0">Selet Type</option>
+                                                        <option *ngFor="let qtype of TypeList" [ngValue]="qtype.type">{{qtype.name}}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ng-container formArrayName="options">
+                                            <div class="col-12">
+                                                @if (assessmentForm.get('questionMasterList').value.questionsList[qListindex].type === "MCQ"){
+                                                    <div class="row" *ngFor="let option of getOptionControls(qListindex); let optionindex = index">
+                                                        <ng-container [formGroupName]="optionindex">
+                                                            
+                                                                <div class="col-12" >
+                                                                   <!-- dffD -  {{assessmentForm.get('questionMasterList').get('questionsList')[qListindex].get('type'.value)}} -->
+                                                                    
+                                                                   <div class="form-group mb-2">
+                                                                        <div class="w-100 d-flex" >
+                                                                            <mat-radio-group
+                                                                            aria-labelledby="example-radio-group-label"
+                                                                            class="example-radio-group me-2"
+                                                                            formControlName="correctAnswer" name="{{qListindex}}isCorrect"
+                                                                            (change)="changeMC(getOptionControls(qListindex).length, qListindex,  optionindex)">
+                                                                                <mat-radio-button class="example-radio-button" [value]="optionsText[optionindex]">{{optionsText[optionindex]}}</mat-radio-button>
+                                                                            
+                                                                        </mat-radio-group>
+                                                                            <input type="text" formControlName="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                            
+                                                            
+                                                        </ng-container>
+                                                    </div>
+                                                }
+
+                                                @if (assessmentForm.get('questionMasterList').value.questionsList[qListindex].type === "MAQ"){
+                                                    <div class="row" *ngFor="let option of getOptionControls(qListindex); let optionindex = index">
+                                                        <ng-container [formGroupName]="optionindex">
+                                                            <div class="col-12" >
+                                                                <div class="form-group mb-2">
+                                                                    <div class="w-100 d-flex" >
+                                                                        <div class="me-2">
+                                                                            <mat-checkbox formControlName="isCorrect" [checked]="option.value.isCorrect"> {{optionsText[optionindex] }} </mat-checkbox>
+                                                                        </div>
+                                                                        <input type="text" formControlName="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ng-container>
+                                                    </div>
+                                                }
+                                                
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                            <!-- <div class="col-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">End Time</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="endTime" class="form-control">
+                                    </div>
+                                </div>
+                            </div> -->
+                            
+                            
+                        </div>
+                       
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-danger me-3" (click)="closeModal()">Close</button>
+                            <button type="button" class="btn btn-primary me-2"  (click)="addQuestions()">Add</button>
+                            <button type="submit" class="btn btn-primary  me-2" *ngIf="assessmentForm.get('questionMasterList').get('questionsList')['controls'].length != 0 ">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

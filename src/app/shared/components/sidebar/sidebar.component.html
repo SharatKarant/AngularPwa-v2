@@ -1,0 +1,34 @@
+<div class="app-logo textcenter-my-3">
+    <h2 class="text-center">LPA Logo</h2>
+</div>
+<div class="profile">
+    <div class="d-flex">
+        <img src="../../../../assets/images/default-user.png" alt="">
+    </div>
+    <p class="profile-name text-center">{{userInfo.firstName}} {{userInfo.middleName}}</p>
+</div>
+<div class="divider"></div>
+<div class="list-group" *ngIf="userInfo.role == 'Admin'" (click)="onChange()">
+    <a routerLink="/dashboard" routerLinkActive="active" class="list-group-item" aria-current="true">
+        <mat-icon>home</mat-icon> Home
+    </a>
+    <!-- <a routerLink="/assignment" routerLinkActive="active" class="list-group-item list-group-item-action">Assignment</a> -->
+    <a routerLink="/assessments" routerLinkActive="active" class="list-group-item action"><mat-icon>assignment</mat-icon> Assessments</a>
+    <a routerLink="/event" routerLinkActive="active" class="list-group-item "><mat-icon>event</mat-icon> Event</a>
+    <a routerLink="/users" routerLinkActive="active" class="list-group-item"><mat-icon>people</mat-icon> Users</a>
+    <a routerLink="/school" routerLinkActive="active" class="list-group-item"><mat-icon>school</mat-icon> School</a>
+    <a routerLink="/branch" routerLinkActive="active" class="list-group-item"><mat-icon>location_city</mat-icon> Branch</a>
+    <a routerLink="/class" routerLinkActive="active" class="list-group-item"><mat-icon>class</mat-icon> Class</a>
+    <!-- <a routerLink="/subject" routerLinkActive="active" class="list-group-item"><mat-icon>subject</mat-icon> Subject</a> -->
+    <a (click)="doLogout()" class="list-group-item list-group-item-action"><mat-icon>exit_to_app</mat-icon> Logout</a>
+</div>
+<div class="list-group" *ngIf="userInfo.role == 'Student'">
+    <a routerLink="/studashboard" routerLinkActive="active" class="list-group-item" aria-current="true">
+        Home
+    </a>
+    <!-- <a routerLink="/assignment" routerLinkActive="active" class="list-group-item list-group-item-action">Assignment</a> -->
+    <!-- <a routerLink="/myassessments" routerLinkActive="active" class="list-group-item list-group-item-action">Assessments</a>
+    <a routerLink="/myevent" routerLinkActive="active" class="list-group-item list-group-item-action">Event</a> -->
+    <a routerLink="/myprofile" routerLinkActive="active" class="list-group-item">My Profile</a>
+    <a (click)="doLogout()" class="list-group-item"><mat-icon>exit_to_app</mat-icon> Logout</a>
+</div>

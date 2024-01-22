@@ -1,0 +1,132 @@
+<div class="body-content">
+    <div class="row m-0 justify-content-center mt-4 h-100">
+        <div class="col-12">
+            <form [formGroup]="registrationForm" (ngSubmit)="submitRegistration()" novalidate>
+                <div class="card ">
+                    <!-- <div class="card-header">
+                        Registration Form
+                    </div> -->
+                    <div class="card-body">
+                        <div>
+                            <h1 class="text-center">Registration Form</h1>
+                        </div>
+                        <div class="row m-0">
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">First Name</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="firstName" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Middle Name</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="middleName" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Last Name</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="lastName" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">DOB</label>
+                                    <div class="w-100">
+                                        <input type="date" formControlName="dateOfBirth" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Mobile No</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="mobileNo" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Email</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="email" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Address</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="address" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">City </label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="city" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Postal No</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="postalNo" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">State</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="state" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">User Name</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="userName" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="form-group mb-2">
+                                    <label class="col-form-label">Password</label>
+                                    <div class="w-100">
+                                        <input type="text" formControlName="password" class="form-control rounded-0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                I have an Account <a routerLink="/login">Go to login page</a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-end">
+                            <button mat-raised-button color="primary" class="rounded-0">Register</button>
+                            <!-- <button type="submit" class="btn btn-primary rounded-0 me-2" >Register</button> -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- <h1>Registration Form work</h1> -->

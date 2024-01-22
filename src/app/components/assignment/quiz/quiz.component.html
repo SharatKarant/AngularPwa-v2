@@ -1,0 +1,123 @@
+<div mat-dialog-content class="p-0">
+    <div class="row m-0 justify-content-center ">
+        <div class="col-12 p-0">
+            <div class="card rounded-0">
+                <div class="card-header rounded-0 bg-app-primary text-white">
+                    Angular Quiz
+                </div>
+                <form [formGroup]="answerForm" (ngSubmit)="saveAnswer()" novalidate>
+                    <div class="card-body">
+                        <div>
+                            <h1>{{data.assessmentData.name}}</h1>
+                        </div>
+                        <div class="row ">
+                            <ng-container formArrayName="questionsList">
+                                <div class="col-12 mb-3 ps-0"
+                                    *ngFor="let questionData of getQuestionsList(); let qListindex = index">
+                                    <div class="row m-0 questionListGroup" [formGroupName]="qListindex">
+                                        <div class="col-12">
+                                            <div class="form-group mb-2 bg-light p-2">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="group-question">
+                                                        <div class="group-question-number">
+                                                            <h3><span><strong>Q {{qListindex +
+                                                                        1}}.</strong>&nbsp;</span></h3>
+                                                        </div>
+                                                        <div>
+                                                            <h3>{{questionData.value.question}}</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="group-point">
+                                                        <h3>{{questionData.value.point}}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ng-container formArrayName="options">
+                                            <div class="col-12">
+                                                @if (answerForm.value.questionsList[qListindex].type === "MCQ"){
+                                                <div class="row"
+                                                    *ngFor="let option of getOptionControls(qListindex); let optionindex = index">
+                                                    <ng-container [formGroupName]="optionindex">
+                                                        <div class="col-12 px-2">
+                                                            <div class="form-group mb-2">
+                                                                <div class="w-100 d-flex">
+                                                                    <mat-radio-group
+                                                                        aria-labelledby="example-radio-group-label"
+                                                                        class="example-radio-group me-2"
+                                                                        formControlName="studentAnswer"
+                                                                        name="{{qListindex}}isCorrect"
+                                                                        (change)="changeMC(getOptionControls(qListindex).length, qListindex,  optionindex)">
+                                                                        <mat-radio-button class="example-radio-button"
+                                                                            [value]="optionsText[optionindex]"><strong>{{optionsText[optionindex]}}.</strong>
+                                                                            &nbsp;&nbsp;{{option.value.text}}</mat-radio-button>
+
+                                                                    </mat-radio-group>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-container>
+                                                </div>
+                                                }
+                                                @if (answerForm.value.questionsList[qListindex].type === "MAQ"){
+                                                <div class="row"
+                                                    *ngFor="let option of getOptionControls(qListindex); let optionindex = index">
+                                                    <ng-container [formGroupName]="optionindex">
+                                                        <div class="col-12 px-2">
+                                                            <div class="form-group mb-2">
+                                                                <div class="w-100 d-flex">
+                                                                    <div class="me-2">
+                                                                        <mat-checkbox formControlName="studentIsCorrect">
+                                                                            <strong>{{optionsText[optionindex]}}.</strong>
+                                                                            &nbsp;&nbsp;{{option.value.text}}
+                                                                        </mat-checkbox>
+                                                                    </div>
+                                                                    <!-- <mat-radio-group
+                                                                        aria-labelledby="example-radio-group-label"
+                                                                        class="example-radio-group me-2"
+                                                                        formControlName="studentAnswer"
+                                                                        name="{{qListindex}}isCorrect"
+                                                                        (change)="changeMC(getOptionControls(qListindex).length, qListindex,  optionindex)">
+                                                                        
+                                                                        <mat-radio-button class="example-radio-button"
+                                                                            [value]="optionsText[optionindex]"><strong>{{optionsText[optionindex]}}.</strong>
+                                                                            &nbsp;&nbsp;{{option.value.text}}</mat-radio-button>
+
+                                                                    </mat-radio-group> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="col-12">
+                                                            <div class="form-group mb-2">
+                                                                <div class="w-100 d-flex">
+                                                                    <div class="me-2">
+                                                                        <mat-checkbox formControlName="studentIsCorrect">
+                                                                            {{optionsText[optionindex] }}
+                                                                        </mat-checkbox>
+                                                                    </div>
+                                                                    <input type="text" formControlName="text"
+                                                                        class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                    </ng-container>
+                                                </div>
+                                                }
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-danger me-3" (click)="closeModal()">Close</button>
+                            <button type="submit" class="btn btn-primary  me-2">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+@import "./variable";
+@import "./app.color";
+@import "./app.material";
+@import "./material.table";
+@import "./app.common";
+@import "./app.responsive";
+
+.appearance-revert{
+    appearance: revert;
+}

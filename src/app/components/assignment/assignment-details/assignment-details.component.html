@@ -1,0 +1,72 @@
+<div mat-dialog-content class="p-0">
+    <div class="row m-0 justify-content-center ">
+        <div class="col-12 p-0">
+            <div class="card rounded-0">
+                <div class="card-header rounded-0 bg-app-primary text-white">
+                    Assessment Details
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h1>{{data.assessmentData.name}}</h1>
+                    </div>
+                    <ng-container *ngIf="questionMasterData">
+                        <div class="question-group" *ngFor="let question of questionMasterData.questionsList; let i=index">
+                            <div class="d-flex justify-content-between">
+                                <div  class="group-question">
+                                    <div class="group-question-number"><h3><span><strong>Q {{i+1}}.</strong>&nbsp;</span></h3></div>
+                                    <div><h3>{{question.question}}</h3></div>
+                                </div>
+                                <div class="group-point"><h3>{{question.point}}</h3></div>
+                            </div>
+                            <div>
+                                <ul>
+                                    <ng-container *ngFor="let option of question.options; let optionIndex=index">
+                                        @if (question.type == "MCQ"){
+                                            <li class='MCQ ' [ngClass]="{'correctAnswer': (option.correctAnswer !='')}">
+                                               <label>{{option.text}}</label>
+                                            </li>
+                                            
+                                        }
+                                        @if (question.type == "MAQ"){
+                                            <li class="MAQ " [ngClass]="{'correct': (option.isCorrect)}">
+                                                <label>{{option.text}}</label>
+                                                
+                                             </li>
+                                        }
+                                        
+                                    </ng-container>
+                                    
+                                    <!-- <li ngClass="MAQ">
+                                        <label>Option 1</label>
+                                        <p><mat-checkbox >Option 1</mat-checkbox></p>
+                                     </li>
+                                     <li ngClass="MAQ correct">
+                                        <label>Option 2</label>
+                                        <p><mat-checkbox [checked]="true">Option 2</mat-checkbox></p>
+                                     </li>
+                                     <li ngClass="MAQ">
+                                        <label>Option 3</label>
+                                        <p><mat-checkbox >Option 3</mat-checkbox></p>
+                                     </li>
+                                     <li ngClass="MAQ">
+                                        <label>Option 4</label>
+                                        <p><mat-checkbox >Option 4</mat-checkbox></p>
+                                     </li> -->
+
+                                     
+                                </ul>
+                            </div>
+                        </div>
+                    </ng-container>
+                    
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-danger me-3" (click)="closeModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

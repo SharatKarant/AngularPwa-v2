@@ -1,0 +1,46 @@
+.event-table {
+    height: 400px;
+    max-width: 100%;
+    overflow: auto;
+    table {
+        width: 100%;
+      }
+    thead {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background-color: #f3f3f3  !important;
+    }
+    tbody{
+      tr{
+        height: 35px;
+      }
+      tr:nth-child(even) {background: #CCC}
+      tr:nth-child(odd) {background: #FFF}
+    }
+   .minWidth-150{
+    min-width: 150px;
+   }
+   .minWidth-250{
+    min-width: 250px;
+   }
+   .minWidth-300{
+    min-width: 300px;
+   }
+   .maxWidth-300{
+    max-width: 300px;
+   }
+   .width-300{
+    width: 300px;
+   }
+   .textEllipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+   }
+
+   .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: white !important;
+}
+    
+}

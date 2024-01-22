@@ -1,0 +1,65 @@
+
+
+<section class="mt-3">
+    <div class="row m-0">
+        
+            <h3>Your Assessments</h3>
+            @for (assessment of assessmentData; track assessment){
+                <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
+                    <mat-card >
+                        <mat-card-header>
+                            <mat-card-title>{{assessment.name}}</mat-card-title>
+                            <mat-card-subtitle>Date : {{assessment.starDate}}  <span>&nbsp;&nbsp; TO &nbsp;&nbsp;</span>  {{assessment.endDate}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>{{assessment.description}}</p>
+                            <mat-divider></mat-divider>
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50"><p><span><strong>Total Question: </strong>{{ filterQMLDByAssessmentId(assessment.id).numberOfQuestion }} </span> </p></div>
+                                <div class="w-50"><p> <span><strong>Total Score: </strong>{{ filterQMLDByAssessmentId(assessment.id).totalScore }}</span> </p></div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="w-50"><p><span><strong>Passing Score: </strong>{{ filterQMLDByAssessmentId(assessment.id).passingScore }} </span>  </p></div>
+                                <div class="w-50"><p><span><strong>Your Score: </strong>{{filterAttemptedAssessmentByAssessmentId(assessment.id)?filterAttemptedAssessmentByAssessmentId(assessment.id).totalScoreObtained:0}}</span></p></div>
+                            </div>
+                           
+                            
+                            
+                          </mat-card-content>
+                        <mat-card-actions>
+                            @if (!filterAttemptedAssessmentByAssessmentId(assessment.id)){
+                                <div class="w-100 text-center">
+                                    <div class="w-100">
+                                        <p class="text-danger">You Have not enrolled yet</p>
+                                    </div>
+                                    <div class="w-100">
+                                        <button mat-raised-button color="accent" (click)="enrollAssessment(assessment)">Enroll Now</button>
+                                    </div>
+                                
+
+                                </div>
+                            }
+                            @if (filterAttemptedAssessmentByAssessmentId(assessment.id)){
+                                @if (filterAttemptedAssessmentByAssessmentId(assessment.id).totalScoreObtained >=filterQMLDByAssessmentId(assessment.id).passingScore){
+                                    <p class="m-auto text-danger">You Passed this assessment</p>
+                                }
+                                @if (filterQMLDByAssessmentId(assessment.id).passingScore >= filterAttemptedAssessmentByAssessmentId(assessment.id).totalScoreObtained){
+                                    <div class="w-100 text-center">
+                                        <div class="w-100">
+                                            <p class="text-danger">You Have not passed</p>
+                                        </div>
+                                        <div class="w-100">
+                                            <button mat-raised-button color="accent" (click)="enrollAssessment(assessment)">Try again</button>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+            }
+            
+    </div>
+</section>

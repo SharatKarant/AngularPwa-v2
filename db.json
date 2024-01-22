@@ -1,0 +1,2081 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "user": [
+    {
+      "id": 1,
+      "userId": 1,
+      "roleId": 1,
+      "schoolId": 1,
+      "classId": 1,
+      "firstName": "Anjan",
+      "lastName": "Admin",
+      "middleName": "Kumar",
+      "fullName": "Anjan Kumar",
+      "password": "admin123",
+      "role": "Admin",
+      "userName": "Adminuser",
+      "mobileNo": "1234567890",
+      "state": "Telangana",
+      "city": "Hyderabad",
+      "branchId": 1,
+      "address": "address 1",
+      "email": "admin@gmail.com",
+      "dateOfBirth": "25-12-2002",
+      "isActive": true,
+      "isSave": false,
+      "postalNo": "500016"
+    },
+    {
+      "id": 2,
+      "userName": "ritik12345",
+      "password": "ritik12345",
+      "firstName": "Ritik",
+      "middleName": "kumar",
+      "lastName": "Raushan",
+      "mobileNo": "9876567890",
+      "email": "ritik@gmail.com",
+      "dateOfBirth": "2000-12-24",
+      "city": "HYderabad",
+      "state": "TS",
+      "postalNo": "501510",
+      "userId": 1,
+      "schoolId": 1,
+      "classId": 1,
+      "roleId": 2,
+      "branchId": 1,
+      "role": "Student",
+      "fullName": "",
+      "address": "Mannegudda",
+      "isActive": true
+    },
+    {
+      "userName": "parent01",
+      "password": "parent01",
+      "firstName": "Parent",
+      "middleName": "",
+      "lastName": "User",
+      "mobileNo": "0987656789",
+      "email": "parent@gmail.com",
+      "dateOfBirth": "2023-12-16",
+      "city": "Hyd",
+      "state": "TS",
+      "postalNo": "300987",
+      "userId": 1,
+      "schoolId": 1,
+      "classId": 1,
+      "roleId": 4,
+      "branchId": 1,
+      "role": "Parent",
+      "fullName": "",
+      "address": "Test Address",
+      "isActive": true,
+      "id": 3
+    },
+    {
+      "userName": "teacher01",
+      "password": "teacher01",
+      "firstName": "Teacher",
+      "middleName": "",
+      "lastName": "User",
+      "mobileNo": "098789080",
+      "email": "teacher@gmail.com",
+      "dateOfBirth": "2023-12-01",
+      "city": "Hyd",
+      "state": "TS",
+      "postalNo": "501510",
+      "userId": 1,
+      "schoolId": 1,
+      "classId": 1,
+      "roleId": 3,
+      "branchId": 1,
+      "role": "Teacher",
+      "fullName": "",
+      "address": "Dummay Address",
+      "isActive": true,
+      "id": 4
+    }
+  ],
+  "roleList": [
+    {
+      "roleId": 1,
+      "role": "Admin",
+      "id": "7ee2"
+    },
+    {
+      "roleId": 2,
+      "role": "Student",
+      "id": "eef7"
+    },
+    {
+      "roleId": 3,
+      "role": "Teacher",
+      "id": "41c5"
+    },
+    {
+      "roleId": 4,
+      "role": "Parent",
+      "id": "0302"
+    }
+  ],
+  "event": [
+    {
+      "name": "Demo Class",
+      "date": "2023-12-15",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "description": "Please attand this demo session for more details!",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Demo Class 2",
+      "date": "2023-12-16",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "description": "Please attand this demo session for more details!"
+    },
+    {
+      "id": 3,
+      "name": "Demo Class 3",
+      "date": "2023-12-17",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "description": "Please attand this demo session for more details!"
+    },
+    {
+      "id": 4,
+      "name": "Demo Class 2",
+      "date": "2023-12-16",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "description": "Please attand this demo session for more details!"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "2eae",
+      "name": "Test 4",
+      "starDate": "2024-01-20",
+      "endDate": "2024-01-27",
+      "assignedClassId": 1,
+      "description": "Demo purpose"
+    },
+    {
+      "id": "a26e",
+      "name": "Test Assessment 2",
+      "starDate": "2024-01-20",
+      "endDate": "2024-01-27",
+      "assignedClassId": 1,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, impedit!"
+    },
+    {
+      "id": "12db",
+      "name": "Test Assessment 3",
+      "starDate": "2024-01-20",
+      "endDate": "2024-01-31",
+      "assignedClassId": 1,
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, quidem!"
+    },
+    {
+      "name": "New Assessment",
+      "starDate": "2024-01-20",
+      "endDate": "2024-01-31",
+      "assignedClassId": 1,
+      "description": "Just for test",
+      "id": "380c"
+    }
+  ],
+  "questionMasterList": [
+    {
+      "id": "1",
+      "assessmentId": 1,
+      "numberOfQuestion": 4,
+      "totalScore": 20,
+      "passingScore": 12,
+      "totalScoreObtained": 0,
+      "questionsList": [
+        {
+          "id": 1,
+          "question": "Who controll all the body parts?",
+          "description": "",
+          "correctAnswer": "Yes Angular is single page application, It is not reloading the page hole page while changing the router, It is only changing the component and html DOM element.",
+          "studentAnswer": "",
+          "point": 5,
+          "scoredPoint": 0,
+          "type": 1,
+          "options": [
+            {
+              "text": "Brain",
+              "isCorrect": true,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Lunce",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Kidneys",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Stomach",
+              "isCorrect": false,
+              "correctAnswer": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Who controll all the body parts1?",
+          "description": "",
+          "correctAnswer": "Yes Angular is single page application, It is not reloading the page hole page while changing the router, It is only changing the component and html DOM element.",
+          "studentAnswer": "",
+          "point": 5,
+          "scoredPoint": 0,
+          "type": 1,
+          "options": [
+            {
+              "text": "Brain",
+              "isCorrect": true,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Lunce",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Kidneys",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Stomach",
+              "isCorrect": false,
+              "correctAnswer": ""
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "question": "Who controll all the body parts2?",
+          "description": "",
+          "correctAnswer": "Yes Angular is single page application, It is not reloading the page hole page while changing the router, It is only changing the component and html DOM element.",
+          "studentAnswer": "",
+          "point": 5,
+          "scoredPoint": 0,
+          "type": 1,
+          "options": [
+            {
+              "text": "Brain",
+              "isCorrect": true,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Lunce",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Kidneys",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Stomach",
+              "isCorrect": false,
+              "correctAnswer": ""
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Who controll all the body parts3?",
+          "description": "",
+          "correctAnswer": "Yes Angular is single page application, It is not reloading the page hole page while changing the router, It is only changing the component and html DOM element.",
+          "studentAnswer": "",
+          "point": 5,
+          "scoredPoint": 0,
+          "type": 1,
+          "options": [
+            {
+              "text": "Brain",
+              "isCorrect": true,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Lunce",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Kidneys",
+              "isCorrect": false,
+              "correctAnswer": ""
+            },
+            {
+              "text": "Stomach",
+              "isCorrect": false,
+              "correctAnswer": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ddfa",
+      "assessmentId": 2,
+      "totalScore": 15,
+      "passingScore": 9,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "AngularJS is a ____",
+          "description": "B) AngularJS is a JavaScript framework.",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Java framework",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "JavaScript framework",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "SQL framework",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "HTML framework",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "AngularJS is perfect for?",
+          "description": "D) AngularJS is perfect for SPAs.",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "MPAs",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "SPAs",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "CPAs",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "DPAs",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Among the following, on which architectural pattern is AngularJS based?",
+          "description": "C) AngularJS is based on an MVVM architecture pattern.",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Observer pattern",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Decorator pattern",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "text": "MVVM architecture pattern",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "MVC architecture pattern",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6970",
+      "assessmentId": 1,
+      "totalScore": 10,
+      "passingScore": 6,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 2,
+      "questionsList": [
+        {
+          "question": "sdfdsf",
+          "description": "sdfdsf",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "dsasdv",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "dsfadsf",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "sdvcx",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "v cxv xcv",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "favf",
+          "description": "vfvfd",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "afvfdv",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "dfgdv",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "fgvdf",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "dfgvfd",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "46c5",
+      "assessmentId": null,
+      "totalScore": 5,
+      "passingScore": 3,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "afgvfsdgdfg",
+          "description": "dfgfdggfd",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "dbsdfgbdfgdffg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "fdgfdg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "dfgdfgtrg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "rgfdbsrtg",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "37a1",
+      "assessmentId": null,
+      "totalScore": 5,
+      "passingScore": 3,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "dsavdsv",
+          "description": "sdvadsv",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "vfdsvdfvg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "vfdvafdvb",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "dfsbvfd",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "bfdbdf",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1b1d",
+      "assessmentId": null,
+      "totalScore": 10,
+      "passingScore": 6,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 2,
+      "questionsList": [
+        {
+          "question": "fsagfgfdsb",
+          "description": "gbgfbn",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "vbgbgbgf",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "gbsfgnbgfh",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "text": "bfgbgfhgfh",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "bxcbgfbh",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "dascsdfcsdf",
+          "description": "fdsfdsfsd",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": null,
+              "text": "adsfdsf",
+              "isCorrect": null
+            },
+            {
+              "correctAnswer": null,
+              "text": "sddafdsf",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": null,
+              "text": "gfafdg",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": null,
+              "text": "gdsagdsg",
+              "isCorrect": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28db",
+      "assessmentId": null,
+      "totalScore": 10,
+      "passingScore": 6,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 2,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "gfbgf",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "ngfhnhg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "hdnhn",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "hjdnhj",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "gfdjhfj",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "fbsgb",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "fghfgh",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "hgfh",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "text": "fgh",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "gfh",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5be8",
+      "assessmentId": null,
+      "totalScore": 15,
+      "passingScore": 9,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "efwerewrqr",
+          "description": "werewrqew",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "adferfre",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "faerfgre",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "text": "frfaref",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "reeeeeeet",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "rfqrfgr",
+          "description": "greq",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": null,
+              "text": "fgreg",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": null,
+              "text": "egrgre",
+              "isCorrect": null
+            },
+            {
+              "correctAnswer": null,
+              "text": "gregre",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": null,
+              "text": "gregre",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
+          "question": "regregwegr",
+          "description": "regregreg",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": null,
+              "text": "gergre",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": null,
+              "text": "gergwergf",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": null,
+              "text": "regreg",
+              "isCorrect": null
+            },
+            {
+              "correctAnswer": null,
+              "text": "ergerwg",
+              "isCorrect": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "",
+      "assessmentId": null,
+      "totalScore": 5,
+      "passingScore": 3,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "AFVSVFSV",
+          "description": "FDGDSGSFDG",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "VXBGB",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "GSSSSSB",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "DSGDS",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "BDSGHG",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "",
+      "assessmentId": null,
+      "totalScore": 5,
+      "passingScore": 3,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "FEFE",
+          "description": "FEWF",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "EQWFWE",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "FWEQFEW",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "FQWRE",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "TEWQETWER",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "",
+      "assessmentId": null,
+      "totalScore": 5,
+      "passingScore": 3,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "fvgsdfgdfsg",
+          "description": "gfdgdfgs",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "sdbdgb",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "gdfsfbsf",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "bgsghf",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "hbhgrthggfb",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "",
+      "assessmentId": null,
+      "totalScore": 5,
+      "passingScore": 3,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "fdgfdsgfd",
+          "description": "gfdgdsfg",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "fdsgfdg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "dfsgfdg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "fdgdfsg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "gfdgdsg",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": null,
+      "assessmentId": null,
+      "totalScore": 5,
+      "passingScore": 3,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "DFGSVDFG",
+          "description": "FDGFDG",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "BFSBFDG",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "DFSGFD",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "text": "DSGDF",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "GDFGBDF",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assessmentId": null,
+      "totalScore": 10,
+      "passingScore": 6,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 2,
+      "questionsList": [
+        {
+          "question": "DSBFDB",
+          "description": "DFBSFDB",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "SFBFDBFDB",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "FDSFDBDF",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "BFDSBFD",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "GDFGSFDG",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "acASD",
+          "description": "SFSDAFSDG",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "FGS",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "FDGFDSG",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "SGSDAgdfb",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "fghgfhfghfgh",
+              "isCorrect": false
+            }
+          ]
+        }
+      ],
+      "id": "7fd9"
+    },
+    {
+      "id": "e895",
+      "assessmentId": null,
+      "totalScore": 4,
+      "passingScore": 2.4,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "dscasdc",
+          "description": "dscsdc",
+          "point": "4",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "vdsafvdsf",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "sadfs",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "frfrf",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "rwefqwerf",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fd44",
+      "assessmentId": null,
+      "totalScore": 7,
+      "passingScore": 4.2,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 1,
+      "questionsList": [
+        {
+          "question": "fghdgfh",
+          "description": "fghfgh",
+          "point": "7",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "fgfghfgh",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "fghfg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "hfghfghfg",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "hgfhfdgh",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "125f",
+      "assessmentId": "2eae",
+      "totalScore": 15,
+      "passingScore": 9,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "dsgvfsdv",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "fvdvdfv",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 3",
+          "description": "vdsvasdv",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 4",
+              "isCorrect": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1715",
+      "assessmentId": "a26e",
+      "totalScore": 15,
+      "passingScore": 9,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "Option C is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option ",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "Option A and C is the correct answer",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 3",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 3",
+          "description": "Option D is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "D",
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "488d",
+      "assessmentId": "12db",
+      "totalScore": 10,
+      "passingScore": 6,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 2,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "Option D is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "Option A and D is the correct answer",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 4",
+              "isCorrect": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assessmentId": "380c",
+      "totalScore": 35,
+      "passingScore": 21,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "Option 2 is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "text": "option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "Option A and D is the correct answer",
+          "point": "10",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option 4",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
+          "question": "Question 3",
+          "description": "OPtion B and C",
+          "point": "20",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option ",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option ",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "text": "Option ",
+              "isCorrect": true
+            }
+          ]
+        }
+      ],
+      "id": "c38c"
+    }
+  ],
+  "studentAnswerMasterList": [
+    {
+      "id": "72d9",
+      "userId": 1,
+      "assessmentId": "2eae",
+      "totalScore": 15,
+      "passingScore": 9,
+      "totalScoreObtained": 15,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "dsgvfsdv",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "studentAnswer": "B",
+              "studentIsCorrect": false,
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "fvdvdfv",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 2",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 3",
+          "description": "vdsvasdv",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 2",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 4",
+              "isCorrect": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8bb7",
+      "userId": 1,
+      "assessmentId": "a26e",
+      "totalScore": 15,
+      "passingScore": 9,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "Option C is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "A",
+              "studentIsCorrect": false,
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "C",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option ",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "Option A and C is the correct answer",
+          "point": "5",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 3",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 3",
+          "description": "Option D is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "A",
+              "studentIsCorrect": false,
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "D",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 4",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8ddb",
+      "userId": 1,
+      "assessmentId": "380c",
+      "totalScore": 35,
+      "passingScore": 21,
+      "totalScoreObtained": 20,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "Option 2 is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "A",
+              "studentIsCorrect": false,
+              "text": "option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "Option A and D is the correct answer",
+          "point": "10",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 4",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
+          "question": "Question 3",
+          "description": "OPtion B and C",
+          "point": "20",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option ",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option ",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option ",
+              "isCorrect": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5320",
+      "userId": 1,
+      "assessmentId": "380c",
+      "totalScore": 35,
+      "passingScore": 21,
+      "totalScoreObtained": 0,
+      "numberOfQuestion": 3,
+      "questionsList": [
+        {
+          "question": "Question 1",
+          "description": "Option 2 is the correct answer",
+          "point": "5",
+          "type": "MCQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "B",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "D",
+              "studentIsCorrect": false,
+              "text": "option 4",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "question": "Question 2",
+          "description": "Option A and D is the correct answer",
+          "point": "10",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 1",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 2",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option 3",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 4",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
+          "question": "Question 3",
+          "description": "OPtion B and C",
+          "point": "20",
+          "type": "MAQ",
+          "options": [
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option 1",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": true,
+              "text": "Option ",
+              "isCorrect": true
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option ",
+              "isCorrect": false
+            },
+            {
+              "correctAnswer": "",
+              "studentAnswer": "",
+              "studentIsCorrect": false,
+              "text": "Option ",
+              "isCorrect": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "questionType": [
+    {
+      "id": 1,
+      "name": "Multiple Choice",
+      "type": "MCQ"
+    },
+    {
+      "id": 2,
+      "name": "Multiple Answers",
+      "type": "MAQ"
+    }
+  ],
+  "class": [
+    {
+      "id": 1,
+      "branchId": 1,
+      "branchName": "Motijheel",
+      "schoolId": 2,
+      "schoolName": "Adarsh Vidya Mandir",
+      "name": "Class 1"
+    },
+    {
+      "id": 2,
+      "branchId": 1,
+      "branchName": "Motijheel",
+      "schoolId": 2,
+      "schoolName": "Adarsh Vidya Mandir",
+      "name": "Class 2"
+    },
+    {
+      "id": 3,
+      "branchId": 1,
+      "branchName": "Motijheel",
+      "schoolId": 2,
+      "schoolName": "Adarsh Vidya Mandir",
+      "name": "Class 3"
+    },
+    {
+      "id": 4,
+      "branchId": 1,
+      "branchName": "Motijheel",
+      "schoolId": 2,
+      "schoolName": "Adarsh Vidya Mandir",
+      "name": "Class 4"
+    },
+    {
+      "id": 5,
+      "branchId": 1,
+      "branchName": "Motijheel",
+      "schoolId": 2,
+      "schoolName": "Adarsh Vidya Mandir",
+      "name": "Class 5"
+    }
+  ],
+  "subject": [
+    {
+      "id": 1,
+      "classId": 1,
+      "name": "English",
+      "createdBy": 1
+    }
+  ],
+  "branch": [
+    {
+      "id": 1,
+      "name": "Motijheel",
+      "schoolName": "Adarsh Vidya Mandir",
+      "schoolId": 2,
+      "city": "Muzaffarpur",
+      "address": "Bank road, Motijheel",
+      "state": "Bihar",
+      "postalCode": "842002",
+      "contactNo": "0987890987",
+      "email": "mfpdps@gmail.com",
+      "branchCode": "MFP001"
+    },
+    {
+      "id": 2,
+      "name": "Begumpet",
+      "schoolName": "Delhi Public School",
+      "schoolId": 1,
+      "city": "Hyderabad",
+      "address": "Kundan Bag road, begumpet, Near Life Style",
+      "state": "Telangana",
+      "postalCode": "500016",
+      "contactNo": "0987678909",
+      "email": "hyddps@gmail.com",
+      "branchCode": "HYD001"
+    },
+    {
+      "id": 3,
+      "name": "Begumpet",
+      "schoolName": "Adarsh Vidya Mandir",
+      "schoolId": 2,
+      "city": "Hyderabad",
+      "address": "Begumpet",
+      "state": "Telangana",
+      "postalCode": "500016",
+      "contactNo": "98765456789",
+      "email": "hyddps@gmai.com",
+      "branchCode": "HYD001"
+    }
+  ],
+  "school": [
+    {
+      "id": 1,
+      "name": "Delhi Public School",
+      "logo": "C:\\fakepath\\124273.jpg",
+      "schoolCode": "APSHYD001"
+    },
+    {
+      "id": 2,
+      "name": "Adarsh Vidya Mandir",
+      "logo": "C:\\fakepath\\SSL error.PNG",
+      "schoolCode": "AVMMFP001"
+    }
+  ]
+}

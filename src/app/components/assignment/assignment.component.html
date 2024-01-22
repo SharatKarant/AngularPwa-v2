@@ -1,0 +1,102 @@
+<section class="mt-3">
+  <div class="row m-0">
+    <div class="col-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a routerLink="/dashboard" >Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Assessments</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  
+</section>
+<section class="event-section mt-3">
+    <div class="row m-0">
+        <div class="col-12">
+            <!-- <p>Assessments</p> -->
+            <div class="d-flex justify-content-between">
+              <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+               
+              </mat-form-field>
+              <!-- <div>
+                <button class="btn btn-success" (click)="opentModal('editAssessments')">Add Assessments</button>
+              </div> -->
+            </div>
+           
+            
+            <div class="mat-elevation-z8 event-table">
+              <table mat-table [dataSource]="dataSource" matSort>
+                 
+                <!-- ID Column -->
+                <ng-container matColumnDef="action" >
+                  <th mat-header-cell *matHeaderCellDef class="text-center text-success"> <mat-icon (click)="opentModal('editAssessments')">add</mat-icon> </th>
+                  <td mat-cell *matCellDef="let element"> 
+                    <ng-container >
+                      <!-- <mat-icon (click)="updateEvent(element)" title="Edit" class="text-success cusror-pointer">edit</mat-icon>
+                      <mat-icon  (click)="deleteEvent(element)" title="Delete" class="text-danger cusror-pointer">restore_from_trash</mat-icon> -->
+                      <button class="btn-menu" mat-button [matMenuTriggerFor]="afterMenu"><mat-icon>menu</mat-icon></button>
+                      <mat-menu #afterMenu="matMenu" xPosition="after">
+                        <button mat-menu-item class="min-h-fittocontent" (click)="viewDetails(element)">View details</button>
+                        <button mat-menu-item class="min-h-fittocontent" (click)="updateAssessment(element)">Update</button>
+                        <button mat-menu-item class="min-h-fittocontent" (click)="deleteAssessment(element)">Delete</button>
+                      </mat-menu>
+                    </ng-container>
+                    
+                  </td>
+                </ng-container>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id" >
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header > ID </th>
+                  <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                </ng-container>
+
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name" >
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="minWidth-250"> Name </th>
+                  <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                </ng-container>
+                
+                 <!-- Class Column -->
+                 <ng-container matColumnDef="assignedClassId" >
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="minWidth-150"> Assigned Class </th>
+                  <td mat-cell *matCellDef="let row"> {{getClassName(row.assignedClassId)}} </td>
+                </ng-container>
+
+                <!-- Start Date Column -->
+                <ng-container matColumnDef="starDate" >
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="minWidth-150"> Star Date </th>
+                  <td mat-cell *matCellDef="let row"> {{row.starDate}} </td>
+                </ng-container>
+            
+                <!-- End Start Column -->
+                <ng-container matColumnDef="endDate" >
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="minWidth-150"> End Date </th>
+                  <td mat-cell *matCellDef="let row"> {{row.endDate}} </td>
+                </ng-container>
+            
+               
+                <!-- Description Column -->
+                <ng-container matColumnDef="description" >
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="minWidth-300"> Description </th>
+                  <td mat-cell *matCellDef="let row" class="minWidth-300 maxWidth-300 width:300 textEllipsis" [title]="row.description"> {{row.description}} </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 25]" aria-label="Select page of users"></mat-paginator>
+            </div>
+        </div>
+    </div>
+</section>

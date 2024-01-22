@@ -1,0 +1,95 @@
+div[mat-dialog-content]{
+    min-width: 70vw;
+    max-width: 1200px;
+}
+.card-body{
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+}
+ul{
+    list-style: none;
+    li{
+        
+        &.MCQ{
+            label{
+                position: relative;
+                padding-left: 10px;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border: 2px solid #767676;
+                    border-radius: 50%;
+                    background-color: rgb(189, 189, 189);
+                    left: -15px;
+                }
+            }
+        }
+        &.MAQ{
+            label{
+                position: relative;
+                padding-left: 10px;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid #767676;
+                    border-radius: 0%;
+                    background-color: rgb(189, 189, 189);
+                    left: -15px;
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    
+                
+                }
+            }
+        }
+        &.correctAnswer{
+            label{
+                color:green;
+                &:before{
+                    background-color: green
+                }
+            }
+        }
+        &.correct{
+            label{
+                color:green;
+                &:before{
+                    background-color: green
+                }
+                &:after{
+                    width: 10px;
+                    height: 6px;
+                    border: 0px solid #ffffff;
+                    background-color: rgb(189 189 189 / 0%);
+                    left: -12px;
+                    border-width: 0px 0px 2px 2px;
+                    transform: rotate(-45deg);
+                    top: 3px;
+                }
+            }
+        }
+    }
+    
+}
+
+.group-question{
+    display: flex;
+    .group-question-number{
+        width: fit-content;
+        min-width: max-content;
+    }
+}
+.group-point{
+    min-width: 100px;
+    text-align: end;
+}
+
+h3{
+    margin-bottom: 0px;
+}
