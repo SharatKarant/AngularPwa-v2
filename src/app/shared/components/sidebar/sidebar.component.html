@@ -20,6 +20,7 @@
     <a routerLink="/branch" routerLinkActive="active" class="list-group-item"><mat-icon>location_city</mat-icon> Branch</a>
     <a routerLink="/class" routerLinkActive="active" class="list-group-item"><mat-icon>class</mat-icon> Class</a>
     <!-- <a routerLink="/subject" routerLinkActive="active" class="list-group-item"><mat-icon>subject</mat-icon> Subject</a> -->
+    <a (click)="enableNotification()" class="list-group-item list-group-item-action">	<mat-icon>notifications</mat-icon>Enable Ntification</a>
     <a (click)="doLogout()" class="list-group-item list-group-item-action"><mat-icon>exit_to_app</mat-icon> Logout</a>
 </div>
 <div class="list-group" *ngIf="userInfo.role == 'Student'">

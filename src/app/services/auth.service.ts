@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, tap, throwError } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,19 @@ export class AuthService {
 public _isLogedIn = new BehaviorSubject<boolean>(false);
 public _role = new BehaviorSubject<any>(['']);
 baseUrl="http://localhost:3000/user";
+serverUrl = 'http://localhost:4000/subscribe'; // Replace with your server URL
+
+public httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
 
   constructor(private localService:LocalStorageService, private http:HttpClient) { }
+
+  sendSubscriptionToServer(subscription: any) {
+    return this.http.post(this.serverUrl, subscription, this.httpOptions);
+  }
 
   // Call this method for login
   doLogin(username:any,password:any){
