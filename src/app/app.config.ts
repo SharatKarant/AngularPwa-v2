@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     importProvidersFrom(HttpClientModule, BrowserAnimationsModule, ToastrModule.forRoot(), MaterialModule),
     provideAnimations(),
-    provideServiceWorker('ngsw-worker.js', {
+    provideServiceWorker('swng.js', {
         enabled: !isDevMode(),
         registrationStrategy: 'registerWhenStable:30000'
     })

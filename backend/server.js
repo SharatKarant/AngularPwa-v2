@@ -43,7 +43,7 @@ const readDataFromJson = () => {
       return JSON.parse(jsonData);
     } catch (e) {
       console.error("Error reading data from JSON file:", e);
-      return { subscriptions: [], datastored: [] };
+      return { subscriptions: [], dataStored: [] };
     }
   };
   
@@ -100,7 +100,7 @@ app.post("/post-data", express.json(), (req, res) => {
   const dataId = uuidv4();
   const datas = daTa;
   datas.id = dataId;
-  data.datastored.push(datas);
+  data.dataStored.push(datas);
   writeDataToJson();
   data.subscriptions.forEach((subscription) => {
     webpush

@@ -11,7 +11,7 @@ export class AuthService {
 public _isLogedIn = new BehaviorSubject<boolean>(false);
 public _role = new BehaviorSubject<any>(['']);
 baseUrl="http://localhost:3000/user";
-serverUrl = 'http://localhost:4000/subscribe'; // Replace with your server URL
+serverUrl = 'http://localhost:4000/subscribe'; 
 
 public httpOptions = {
   headers: new HttpHeaders({

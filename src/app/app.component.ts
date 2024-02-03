@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit{
   Islogedin:boolean;
   isExpend:boolean=false;
   isCollapsed:boolean=false;
-  constructor(public authSer:AuthService){
+  constructor(public authSer:AuthService, private http:HttpClient){
    this.authSer._isLogedIn.subscribe((res:boolean)=>{
       this.Islogedin = res;
     });
@@ -48,6 +49,43 @@ export class AppComponent implements OnInit, AfterViewInit{
     this.isCollapsed = isTrue;
     this.isExpend = false;
     console.log(this.isCollapsed);
+  }
+
+  postSync() {
+    let obj = {
+      "userInfo":localStorage.getItem("userInfo"),
+      "token": localStorage.getItem('appToken')
+    };
+    this.http.post('http://localhost:4000/post-data', obj).subscribe(
+      res => {
+        console.log("Successfully synced data to server", res);
+      },
+      err => {
+        if (err.status == 504 || err.status == 500) {
+          this.backgroundSync(obj);
+        }
+      }
+    );
+  }
+  
+  backgroundSync(obj: any) {
+    console.log(obj);
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.controller.postMessage({
+        type: 'GET_LOCAL_STORAGE_DATA',
+        data: obj, 
+      });
+    }
+    navigator.serviceWorker.ready
+    .then((registration: ServiceWorkerRegistration) => {
+      return registration.sync.register('myFirstBackgroundSync', obj);
+    })
+    .then(() => {
+      console.log('Background sync registered successfully');
+    })
+    .catch(error => {
+      console.error('Error registering background sync:', error);
+    });
   }
 
 }
