@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { HttpClient } from '@angular/common/http';
+import { IndexDBService } from './services/index-db.service'
 
 @Component({
   selector: 'app-root',
@@ -24,9 +25,9 @@ export class AppComponent implements OnInit, AfterViewInit{
   Islogedin:boolean;
   isExpend:boolean=false;
   isCollapsed:boolean=false;
-  constructor(public authSer:AuthService, private http:HttpClient){
+  constructor(public authSer:AuthService, private http:HttpClient, private indexedDBService: IndexDBService){
    this.authSer._isLogedIn.subscribe((res:boolean)=>{
-      this.Islogedin = res;
+      this.Islogedin = res;   
     });
   }
   ngAfterViewInit() {
@@ -54,7 +55,8 @@ export class AppComponent implements OnInit, AfterViewInit{
   postSync() {
     let obj = {
       "userInfo":localStorage.getItem("userInfo"),
-      "token": localStorage.getItem('appToken')
+      "token": localStorage.getItem('appToken'),
+      "timing":  new Date().toISOString(),
     };
     this.http.post('http://localhost:4000/post-data', obj).subscribe(
       res => {
@@ -62,30 +64,48 @@ export class AppComponent implements OnInit, AfterViewInit{
       },
       err => {
         if (err.status == 504 || err.status == 500) {
-          this.backgroundSync(obj);
+          this.indexedDBService
+          .addUser(obj)
+          .then(this.backgroundSync)
+          .catch(console.log);
+          // this.backgroundSync(obj);
         }
       }
     );
   }
   
-  backgroundSync(obj: any) {
-    console.log(obj);
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.controller.postMessage({
-        type: 'GET_LOCAL_STORAGE_DATA',
-        data: obj, 
-      });
-    }
-    navigator.serviceWorker.ready
-    .then((registration: ServiceWorkerRegistration) => {
-      return registration.sync.register('myFirstBackgroundSync', obj);
-    })
-    .then(() => {
-      console.log('Background sync registered successfully');
-    })
-    .catch(error => {
-      console.error('Error registering background sync:', error);
-    });
-  }
+//   backgroundSync(obj: any) {
+//     console.log(obj);
+//     if ('serviceWorker' in navigator) {
+//       navigator.serviceWorker.controller.postMessage({
+//         type: 'GET_LOCAL_STORAGE_DATA',
+//         data: obj, 
+//       });
+//     }
+//     navigator.serviceWorker.ready
+//     .then((registration: ServiceWorkerRegistration) => {
+//       return registration.sync.register('myFirstBackgroundSync');
+//     })
+//     .then(() => {
+//       console.log('Background sync registered successfully');
+//     })
+//     .catch(error => {
+//       console.error('Error registering background sync:', error);
+//     });
+//   }
+
+backgroundSync() {
+  navigator.serviceWorker.ready
+  .then((registration: ServiceWorkerRegistration) => {
+    return registration.sync.register('myFirstBackgroundSync');
+  })
+  .then(() => {
+    console.log('Background sync registered successfully');
+  })
+  .catch(error => {
+    console.error('Error registering background sync:', error);
+  });
+}
 
 }
+
