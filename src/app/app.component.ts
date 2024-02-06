@@ -66,7 +66,7 @@ export class AppComponent implements OnInit, AfterViewInit{
         if (err.status == 504 || err.status == 500) {
           this.indexedDBService
           .addUser(obj)
-          .then(this.backgroundSync)
+          .then(()=>this.backgroundSync('myFirstBackgroundSync'))
           .catch(console.log);
           // this.backgroundSync(obj);
         }
@@ -94,10 +94,10 @@ export class AppComponent implements OnInit, AfterViewInit{
 //     });
 //   }
 
-backgroundSync() {
+backgroundSync(tagName: string) {
   navigator.serviceWorker.ready
   .then((registration: ServiceWorkerRegistration) => {
-    return registration.sync.register('myFirstBackgroundSync');
+    return registration.sync.register(tagName);
   })
   .then(() => {
     console.log('Background sync registered successfully');

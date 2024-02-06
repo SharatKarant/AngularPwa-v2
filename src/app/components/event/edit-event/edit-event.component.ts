@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { EventService } from '../../../services/event.service';
 import { ToastrService } from 'ngx-toastr';
 import { CommonService } from '../../../services/common.service';
+import { IndexDBService } from '../../../services/index-db.service';
 
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -39,7 +40,8 @@ export class EditEventComponent implements OnInit, AfterViewInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private eventServ: EventService,
     private toastr: ToastrService,
-    private commonServ:CommonService
+    private commonServ:CommonService,
+    private indexedDBService: IndexDBService
   ) {
     this.eventForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -76,6 +78,17 @@ export class EditEventComponent implements OnInit, AfterViewInit {
         this.commonServ.callRefreshData();
         this.dialogRef.close();
 
+      },
+      (error: any) => {
+        console.log(error);
+        
+          this.indexedDBService
+            .addUser(this.eventForm.value)
+            .then(() => this.backgroundSync('events-backgroundsync'))
+            .catch(console.log);
+            this.toastr.success("Event updated successfully(In Sync)");
+            this.commonServ.callRefreshData();
+        this.dialogRef.close();
       });
     } else {
       if (this.eventForm.valid) {
@@ -83,6 +96,17 @@ export class EditEventComponent implements OnInit, AfterViewInit {
           this.toastr.success("Event successfully added");
           this.commonServ.callRefreshData();
           this.dialogRef.close();
+        },
+        (error: any) => {
+          console.log(error);
+          
+            this.indexedDBService
+              .addUser(this.eventForm.value)
+              .then(() => this.backgroundSync('events-backgroundsync'))
+              .catch(console.log);
+              this.toastr.success("Event successfully added(In Sync)");
+              this.commonServ.callRefreshData();
+        this.dialogRef.close();
         });
       } else {
         this.toastr.error("Please Enter valid data", "Invalid data");
@@ -92,5 +116,18 @@ export class EditEventComponent implements OnInit, AfterViewInit {
   }
   closeModal() {
     this.dialogRef.close();
+  }
+
+  backgroundSync(tagName: string) {
+    navigator.serviceWorker.ready
+    .then((registration: ServiceWorkerRegistration) => {
+      return registration.sync.register(tagName);
+    })
+    .then(() => {
+      console.log('Background sync registered successfully');
+    })
+    .catch(error => {
+      console.error('Error registering background sync:', error);
+    });
   }
 }

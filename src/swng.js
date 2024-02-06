@@ -40,19 +40,24 @@
 
 importScripts('ngsw-worker.js');
 
+let db;
+
 
 self.addEventListener('sync', (event) => {
   if (event.tag === 'myFirstBackgroundSync') {
-    event.waitUntil(getDataAndSend());
+    event.waitUntil(getDataAndSend('http://localhost:4000/post-data'));
+  }
+  if (event.tag === 'events-backgroundsync') {
+    event.waitUntil(getDataAndSend('http://localhost:3000/event'));
   }
 });
 
 
-async function addData(idbobj) {
+async function addData(idbobj, url) {
   let obj = idbobj;
   console.log(obj);
   try {
-    const response = await fetch('http://localhost:4000/post-data', {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
@@ -71,19 +76,18 @@ async function addData(idbobj) {
   }
 }
 
-function getDataAndSend() {
-  let db;
+function getDataAndSend(url) {
   const request = indexedDB.open('my-db');
   request.onerror = (event) => {
     console.log('Please allow my web app to use IndexedDB', event);
   };
   request.onsuccess = (event) => {
     db = event.target.result;
-    getData(db);
+    getData(db,url);
   };
 }
 
-function getData(db) {
+function getData(db,url) {
   const transaction = db.transaction(['user-store']);
   const objectStore = transaction.objectStore('user-store');
   const request = objectStore.get('obj');
@@ -91,7 +95,7 @@ function getData(db) {
     console.error("Error while  retrieving data", event);
   };
   request.onsuccess = (event) => {
-    addData(request.result);
+    addData(request.result,url);
     console.log('The data stored ' + request.result);
   };
 }
